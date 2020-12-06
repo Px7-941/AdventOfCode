@@ -4,8 +4,10 @@ using System.IO;
 
 namespace AdventOfCode.Day1
 {
-    public class PuzzleDay1 : IPuzzle
+    public class PuzzleDay1 : PuzzleBase, IPuzzle
     {
+        public override int DayNumber => 1;
+
         private List<int> NumList { get; } = new List<int>();
 
         public void Load()
@@ -13,7 +15,7 @@ namespace AdventOfCode.Day1
             string line;
 
             // Read the file and display it line by line.  
-            using StreamReader file = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"Day1\NumList.txt"));
+            using StreamReader file = new StreamReader(FilePath);
             while ((line = file.ReadLine()) != null)
             {
                 if (int.TryParse(line, out var number))
@@ -25,16 +27,16 @@ namespace AdventOfCode.Day1
 
         public void Solve()
         {
-            Search1();
-            Search2();
+            Console.WriteLine($"Part One: Answer: {PartOne()}");
+            Console.WriteLine($"Part Two: Answer: {PartTwo()}");
         }
 
-        private void Search1()
+        private int PartOne()
         {
-            var foundFlag = false;
+            var correctPasswords = 0;
             for (var i = 0; i < NumList.Count; i++)
             {
-                if (foundFlag)
+                if (correctPasswords > 0)
                 {
                     break;
                 }
@@ -44,29 +46,26 @@ namespace AdventOfCode.Day1
                     var sum = NumList[i] + NumList[j];
                     if (sum == 2020)
                     {
-                        var product = NumList[i] * NumList[j];
-                        Console.WriteLine($"{ NumList[i]}, { NumList[j]}");
-                        Console.WriteLine($"Sum: {sum}");
-                        Console.WriteLine($"Product: {product}");
-                        foundFlag = true;
+                        correctPasswords = NumList[i] * NumList[j];
                         break;
                     }
                 }
             }
+            return correctPasswords;
         }
 
-        private void Search2()
+        private int PartTwo()
         {
-            var foundFlag = false;
+            var correctPasswords = 0;
             for (var i = 0; i < NumList.Count; i++)
             {
-                if (foundFlag)
+                if (correctPasswords > 0)
                 {
                     break;
                 }
                 for (var j = 0; j < NumList.Count; j++)
                 {
-                    if (foundFlag)
+                    if (correctPasswords > 0)
                     {
                         break;
                     }
@@ -80,16 +79,13 @@ namespace AdventOfCode.Day1
                         var sum = NumList[i] + NumList[j] + NumList[k];
                         if (sum == 2020)
                         {
-                            var product = NumList[i] * NumList[j] * NumList[k];
-                            Console.WriteLine($"{ NumList[i]}, { NumList[j]}, { NumList[k]}");
-                            Console.WriteLine($"Sum: {sum}");
-                            Console.WriteLine($"Product: {product}");
-                            foundFlag = true;
+                            correctPasswords = NumList[i] * NumList[j] * NumList[k];
                             break;
                         }
                     }
                 }
             }
+            return correctPasswords;
         }
     }
 }

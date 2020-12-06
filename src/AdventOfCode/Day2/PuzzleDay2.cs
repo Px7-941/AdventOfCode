@@ -4,21 +4,23 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode.Day2
 {
-    internal class PuzzleDay2 : IPuzzle
+    internal class PuzzleDay2 : PuzzleBase, IPuzzle
     {
+        public override int DayNumber => 2;
+
         private string Pattern { get; } = @"([0-9]{1,2})-([0-9]{1,2}) ([a-z]{1}): ([a-z]*)";
         private string FileContent { get; set; } = string.Empty;
 
         public void Load()
         {
-            using StreamReader file = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"Day2\PasswordsAndPolicy.txt"));
+            using StreamReader file = new StreamReader(FilePath);
             FileContent = file.ReadToEnd();
         }
 
         public void Solve()
         {
-            Console.WriteLine($"Correct password count: {CountCorrectPasswords()}");
-            Console.WriteLine($"Correct password count: {CountCorrectPasswords2()}");
+            Console.WriteLine($"Part One: Correct password count: {CountCorrectPasswords()}");
+            Console.WriteLine($"Part Two: Correct password count: {CountCorrectPasswords2()}");
         }
 
         private int CountCorrectPasswords()

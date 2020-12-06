@@ -1,6 +1,6 @@
 ﻿using System;
-using AdventOfCode.Day1;
-using AdventOfCode.Day2;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AdventOfCode
 {
@@ -14,13 +14,23 @@ namespace AdventOfCode
             }
 
             Console.WriteLine("Advent of code!");
-            var day1 = new PuzzleDay1();
-            day1.Load();
-            day1.Solve();
 
-            var day2 = new PuzzleDay2();
-            day2.Load();
-            day2.Solve();
+            foreach (var type in GetIPuzzleTypes())
+            {
+                var puzzle = (IPuzzle)Activator.CreateInstance(type);
+                Console.WriteLine(puzzle.PuzzleName);
+                puzzle.Load();
+                puzzle.Solve();
+                Console.WriteLine($"--------------------{Environment.NewLine}");
+            }
+        }
+
+        static private IEnumerable<Type> GetIPuzzleTypes()
+        {
+            return AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(s => s.GetTypes())
+                .Where(x => typeof(IPuzzle).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
+                .OrderBy(x => x.FullName);
         }
     }
 }
