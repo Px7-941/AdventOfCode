@@ -13,7 +13,8 @@ namespace AdventOfCode
                 throw new ArgumentNullException(nameof(args));
             }
 
-            Console.WriteLine("Advent of code!");
+            Console.WriteLine("Advent of code 2020!");
+            Console.WriteLine($"--------------------{Environment.NewLine}");
 
             foreach (var type in GetIPuzzleTypes())
             {
