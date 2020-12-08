@@ -7,7 +7,6 @@ namespace AdventOfCode.Day7
 {
     public class PuzzleDay7 : PuzzleBase, IPuzzle
     {
-
         public override int DayNumber => 7;
 
         private const string ShinyGold = "shiny gold";
