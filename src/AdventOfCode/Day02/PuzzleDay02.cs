@@ -2,9 +2,9 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Day2
+namespace AdventOfCode.Day02
 {
-    internal class PuzzleDay2 : PuzzleBase, IPuzzle
+    internal class PuzzleDay02 : PuzzleBase, IPuzzle
     {
         public override int DayNumber => 2;
 

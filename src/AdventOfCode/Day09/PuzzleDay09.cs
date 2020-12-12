@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace AdventOfCode.Day9
+namespace AdventOfCode.Day09
 {
-    public class PuzzleDay9 : PuzzleBase, IPuzzle
+    public class PuzzleDay09 : PuzzleBase, IPuzzle
     {
         public override int DayNumber => 9;
 
@@ -14,7 +14,7 @@ namespace AdventOfCode.Day9
 
         public void Load()
         {
-            DataList.AddRange(File.ReadAllLines(FilePath).Select(x => long.Parse(x)).ToList());
+            DataList.AddRange(File.ReadAllLines(FilePath).Select(long.Parse).ToList());
         }
 
         public void Solve()

@@ -9,9 +9,9 @@ namespace AdventOfCode
 
         public string PuzzleName
         {
-            get { return $"Puzzle day {DayNumber}"; }
+            get { return $"Puzzle day {DayNumber:00}"; }
         }
 
-        public string FilePath { get { return Path.Combine(Environment.CurrentDirectory, @$"Day{DayNumber:00}\PuzzleDay{DayNumber}.txt"); } }
+        public string FilePath { get { return Path.Combine(Environment.CurrentDirectory, @$"Day{DayNumber:00}\PuzzleDay{DayNumber:00}.txt"); } }
     }
 }

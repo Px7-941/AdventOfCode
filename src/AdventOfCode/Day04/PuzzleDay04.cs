@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Day4
+namespace AdventOfCode.Day04
 {
-    public class PuzzleDay1 : PuzzleBase, IPuzzle
+    public class PuzzleDay04 : PuzzleBase, IPuzzle
     {
         public override int DayNumber => 4;
 

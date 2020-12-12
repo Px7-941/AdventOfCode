@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace AdventOfCode.Day8
+namespace AdventOfCode.Day08
 {
-    public class PuzzleDay7 : PuzzleBase, IPuzzle
+    public class PuzzleDay08 : PuzzleBase, IPuzzle
     {
         public override int DayNumber => 8;
 
