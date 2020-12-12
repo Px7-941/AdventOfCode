@@ -12,6 +12,6 @@ namespace AdventOfCode
             get { return $"Puzzle day {DayNumber}"; }
         }
 
-        public string FilePath { get { return Path.Combine(Environment.CurrentDirectory, @$"Day{DayNumber}\PuzzleDay{DayNumber}.txt"); } }
+        public string FilePath { get { return Path.Combine(Environment.CurrentDirectory, @$"Day{DayNumber:00}\PuzzleDay{DayNumber}.txt"); } }
     }
 }

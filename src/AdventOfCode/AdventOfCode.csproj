@@ -6,33 +6,37 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Update="Day1\PuzzleDay1.txt">
+		<None Update="Day01\PuzzleDay1.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Day2\PuzzleDay2.txt">
+		<None Update="Day02\PuzzleDay2.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Day3\PuzzleDay3.txt">
+		<None Update="Day03\PuzzleDay3.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Day4\PuzzleDay4.txt">
+		<None Update="Day04\PuzzleDay4.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Day5\PuzzleDay5.txt">
+		<None Update="Day05\PuzzleDay5.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Day6\PuzzleDay6.txt">
+		<None Update="Day06\PuzzleDay6.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Day7\PuzzleDay7.txt">
+		<None Update="Day07\PuzzleDay7.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Day8\PuzzleDay8.txt">
+		<None Update="Day08\PuzzleDay8.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-		<None Update="Day9\PuzzleDay9.txt">
+		<None Update="Day09\PuzzleDay9.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Day10\" />
 	</ItemGroup>
 
 </Project>
