@@ -8,9 +8,9 @@ namespace AdventOfCode.Day12
         {
             private int X { get; set; }
             private int Y { get; set; }
-            public int Dir { get; set; }
-            public int WayX { get; set; } = 10;
-            public int WayY { get; set; } = 1;
+            public int Dir { get; private set; }
+            public int WayX { get; private set; } = 10;
+            public int WayY { get; private set; } = 1;
 
             public void Move(int dir, int val)
             {
