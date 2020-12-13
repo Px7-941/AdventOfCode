@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
+using MoreLinq;
 
 namespace AdventOfCode.Day10
 {
