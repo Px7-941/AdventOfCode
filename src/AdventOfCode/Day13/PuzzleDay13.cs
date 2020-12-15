@@ -7,7 +7,7 @@ using MoreLinq;
 
 namespace AdventOfCode.Day13
 {
-    public partial class PuzzleDay13 : PuzzleBase, IPuzzle
+    public class PuzzleDay13 : PuzzleBase, IPuzzle
     {
         public override int DayNumber => 13;
 

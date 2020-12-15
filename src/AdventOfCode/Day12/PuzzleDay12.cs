@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AdventOfCode.Day12
 {
-    public partial class PuzzleDay12 : PuzzleBase, IPuzzle
+    public class PuzzleDay12 : PuzzleBase, IPuzzle
     {
         public override int DayNumber => 12;
 
