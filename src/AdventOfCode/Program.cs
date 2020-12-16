@@ -14,15 +14,29 @@ namespace AdventOfCode
             }
 
             Console.WriteLine("Advent of code 2020!");
+
+            var types = GetIPuzzleTypes();
+
             Console.WriteLine($"--------------------{Environment.NewLine}");
 
-            foreach (var type in GetIPuzzleTypes())
+            if (System.Diagnostics.Debugger.IsAttached && types.Any())
             {
-                var puzzle = (IPuzzle)Activator.CreateInstance(type);
+                var puzzle = (IPuzzle)Activator.CreateInstance(types.Last());
                 Console.WriteLine(puzzle.PuzzleName);
                 puzzle.Load();
                 puzzle.Solve();
                 Console.WriteLine($"--------------------{Environment.NewLine}");
+            }
+            else
+            {
+                foreach (var type in types)
+                {
+                    var puzzle = (IPuzzle)Activator.CreateInstance(type);
+                    Console.WriteLine(puzzle.PuzzleName);
+                    puzzle.Load();
+                    puzzle.Solve();
+                    Console.WriteLine($"--------------------{Environment.NewLine}");
+                }
             }
         }
 
