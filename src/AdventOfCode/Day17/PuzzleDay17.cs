@@ -14,34 +14,37 @@ namespace AdventOfCode.Day17
 
         public void Load()
         {
-            var data = File.ReadAllLines(FilePath).ToList();
+            var input = File.ReadAllLines(FilePath).ToList();
             NeighbourOffsets = GenerateNeighours().ToList();
             NeighbourOffsets.Remove((0, 0, 0, 0));
-            Cubes = data.SelectMany((x, i) => x.Select((y, j) => (Coord: (j, i, 0, 0), Char: y))).ToDictionary(x => x.Coord, x => x.Char);
+            Cubes = input.SelectMany((x, i) => x.Select((y, j) => (Coord: (j, i, 0, 0), Char: y))).ToDictionary(x => x.Coord, x => x.Char);
         }
 
         public void Solve()
         {
+            var initialState = Cubes;
             Console.WriteLine($"Part One: {PartOne()}");
+
+            Cubes = initialState;
             Console.WriteLine($"Part Two: {PartTwo()}");
         }
 
         private long PartOne()
         {
-            var result = 0;
-            for (int i = 0; i < 6; i++)
-            {
-                result = RunCycle(false);
-            }
-            return result;
+            return Process();
         }
 
         private long PartTwo()
         {
+            return Process(true);
+        }
+
+        private int Process(bool isPartTwo = false)
+        {
             var result = 0;
             for (int i = 0; i < 6; i++)
             {
-                result = RunCycle(true);
+                result = RunCycle(isPartTwo);
             }
             return result;
         }

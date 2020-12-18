@@ -19,7 +19,7 @@ namespace AdventOfCode
 
             Console.WriteLine($"--------------------{Environment.NewLine}");
 
-            if (System.Diagnostics.Debugger.IsAttached && types.Any())
+            if (System.Diagnostics.Debugger.IsAttached && types.Any() && false)
             {
                 var puzzle = (IPuzzle)Activator.CreateInstance(types.Last());
                 Console.WriteLine(puzzle.PuzzleName);
