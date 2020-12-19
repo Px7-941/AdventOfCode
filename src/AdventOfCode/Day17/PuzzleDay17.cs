@@ -99,7 +99,7 @@ namespace AdventOfCode.Day17
             }
         }
 
-        private IEnumerable<(int x, int y, int z, int w)> GenerateNeighours()
+        static private IEnumerable<(int x, int y, int z, int w)> GenerateNeighours()
         {
             for (int x = -1; x < 2; x++)
             {
